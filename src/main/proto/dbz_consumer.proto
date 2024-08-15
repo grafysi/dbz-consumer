@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.grafysi.dbzconsumer";
+option java_outer_classname = "DbzConsumerProto";
+option objc_class_prefix = "DBZC";
+
+package dbzconsumer;
+
+service DbzConsumer {
+  rpc addConsumer(SourceTopic) returns (stream JsonRecord) {};
+}
+
+message SourceTopic {
+  string name = 1;
+  int32 partition =2;
+}
+
+message ConsumerInfo {
+  string name = 1;
+  string batch_size = 2;
+  int64 poll_interval_ms = 3;
+}
+
+message JsonRecord {
+  string key = 1;
+  string value = 2;
+}

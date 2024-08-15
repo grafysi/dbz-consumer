@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/dbz-integration.iml" filepath="$PROJECT_DIR$/dbz-integration.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/dbz-integration.main.iml" filepath="$PROJECT_DIR$/.idea/modules/dbz-integration.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/dbz-integration.test.iml" filepath="$PROJECT_DIR$/.idea/modules/dbz-integration.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/dbz-consumer.iml" filepath="$PROJECT_DIR$/.idea/modules/dbz-consumer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/dbz-consumer.main.iml" filepath="$PROJECT_DIR$/.idea/modules/dbz-consumer.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/dbz-consumer.test.iml" filepath="$PROJECT_DIR$/.idea/modules/dbz-consumer.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/untitled/dbz-consumer.untitled.iml" filepath="$PROJECT_DIR$/.idea/modules/untitled/dbz-consumer.untitled.iml" />
     </modules>
   </component>
 </project>

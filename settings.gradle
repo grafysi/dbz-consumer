@@ -1,2 +1,3 @@
-rootProject.name = 'dbz-integration'
+rootProject.name = 'dbz-consumer'
+include 'untitled'
 
