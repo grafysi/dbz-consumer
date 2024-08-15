@@ -1,2 +1,2 @@
 # dbz-integration
-A data integration pipeline based on Debezium and Kafka connect
+Grafysi integration pipeline based on Debezium and Kafka connect
