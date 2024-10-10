@@ -1,0 +1,27 @@
+{
+  "name": "mimic4demo-source1-avro",
+  "config": {
+    "connector.class": "io.debezium.connector.postgresql.PostgresConnector",
+    "tasks.max": "1",
+    "plugin.name": "pgoutput",
+    "database.hostname": "192.168.100.1",
+    "database.port": "5433",
+    "database.user": "postgres",
+    "database.password": "abcd1234",
+    "database.dbname": "mimic4demo",
+    "topic.prefix": "mimic4demo",
+    "max.batch.size": "5",
+    "record.processing.threads": "1",
+    "key.converter": "io.apicurio.registry.utils.converter.AvroConverter",
+    "key.converter.apicurio.registry.url": "http://apicurio.hzp.local:8000/apis/registry/v2",
+    "key.converter.apicurio.registry.auto-register": true,
+    "key.converter.apicurio.registry.find-latest": true,
+    "value.converter": "io.apicurio.registry.utils.converter.AvroConverter",
+    "value.converter.apicurio.registry.url": "http://apicurio.hzp.local:8000/apis/registry/v2",
+    "value.converter.apicurio.registry.auto-register": true,
+    "value.converter.apicurio.registry.find-latest": true,
+    "schema.name.adjustment.mode": "avro",
+    "notification.enabled.channels": "sink",
+    "notification.sink.topic.name": "dbz.notifications"
+  }
+}

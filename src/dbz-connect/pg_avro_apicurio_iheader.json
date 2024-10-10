@@ -1,0 +1,30 @@
+{
+  "name": "mimic4demo-source1-avro-iheader-v1",
+  "config": {
+    "connector.class": "io.debezium.connector.postgresql.PostgresConnector",
+    "tasks.max": "1",
+    "plugin.name": "pgoutput",
+    "database.hostname": "192.168.100.1",
+    "database.port": "5433",
+    "database.user": "postgres",
+    "database.password": "abcd1234",
+    "database.dbname": "mimic4demo",
+    "topic.prefix": "mimic4demo_iheader",
+    "max.batch.size": "5",
+    "record.processing.threads": "1",
+    "key.converter": "io.apicurio.registry.utils.converter.AvroConverter",
+    "key.converter.apicurio.registry.url": "http://apicurio.hzp.local:8000/apis/registry/v2",
+    "key.converter.apicurio.registry.auto-register": true,
+    "key.converter.apicurio.registry.find-latest": true,
+    "value.converter": "io.apicurio.registry.utils.converter.AvroConverter",
+    "value.converter.apicurio.registry.url": "http://apicurio.hzp.local:8000/apis/registry/v2",
+    "value.converter.apicurio.registry.auto-register": true,
+    "value.converter.apicurio.registry.find-latest": true,
+    "apicurio. registry. artifact-resolver-strategy": "io.apicurio.registry.serde.avro.strategy.TopicRecordIdStrategy",
+    "schema.name.adjustment.mode": "avro",
+    "transforms": "InsertHeader",
+    "transforms.InsertHeader.type": "org.apache.kafka.connect.transforms.InsertHeader",
+    "transforms.InsertHeader.header": "__dbz_topic",
+    "transforms.InsertHeader.value.literal": "${topic}"
+  }
+}

@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/dbz-consumer.iml" filepath="$PROJECT_DIR$/.idea/modules/dbz-consumer.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/dbz-consumer.main.iml" filepath="$PROJECT_DIR$/.idea/modules/dbz-consumer.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/dbz-consumer.test.iml" filepath="$PROJECT_DIR$/.idea/modules/dbz-consumer.test.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/untitled/dbz-consumer.untitled.iml" filepath="$PROJECT_DIR$/.idea/modules/untitled/dbz-consumer.untitled.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/kbased-sinker.iml" filepath="$PROJECT_DIR$/.idea/modules/kbased-sinker.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/kbased-sinker.main.iml" filepath="$PROJECT_DIR$/.idea/modules/kbased-sinker.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/kbased-sinker.test.iml" filepath="$PROJECT_DIR$/.idea/modules/kbased-sinker.test.iml" />
     </modules>
   </component>
 </project>

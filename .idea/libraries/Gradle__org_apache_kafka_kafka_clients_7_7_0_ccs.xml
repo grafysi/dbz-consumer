@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: org.apache.kafka:kafka-clients:7.7.0-ccs" type="java-imported" external-system-id="GRADLE">
+    <properties groupId="org.apache.kafka" artifactId="kafka-clients" version="7.7.0-ccs" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.kafka/kafka-clients/7.7.0-ccs/3640c4eb1fc179f1bb24368a7b9b7f9f01f07f7e/kafka-clients-7.7.0-ccs.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.kafka/kafka-clients/7.7.0-ccs/60bbd3b2c7dc1b271650e07817adbdf13909f4cf/kafka-clients-7.7.0-ccs-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

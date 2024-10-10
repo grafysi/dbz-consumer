@@ -1,0 +1,232 @@
+{
+  "connect.name": "mimic4demo.mimiciv_hosp.patients.Envelope",
+  "connect.version": 2,
+  "fields": [
+    {
+      "default": null,
+      "name": "before",
+      "type": [
+        "null",
+        {
+          "connect.name": "mimic4demo.mimiciv_hosp.patients.Value",
+          "fields": [
+            {
+              "name": "subject_id",
+              "type": "int"
+            },
+            {
+              "name": "gender",
+              "type": "string"
+            },
+            {
+              "default": null,
+              "name": "anchor_age",
+              "type": [
+                "null",
+                {
+                  "connect.type": "int16",
+                  "type": "int"
+                }
+              ]
+            },
+            {
+              "name": "anchor_year",
+              "type": {
+                "connect.type": "int16",
+                "type": "int"
+              }
+            },
+            {
+              "name": "anchor_year_group",
+              "type": "string"
+            },
+            {
+              "default": null,
+              "name": "dod",
+              "type": [
+                "null",
+                {
+                  "connect.name": "io.debezium.time.Date",
+                  "connect.version": 1,
+                  "type": "int"
+                }
+              ]
+            }
+          ],
+          "name": "Value",
+          "type": "record"
+        }
+      ]
+    },
+    {
+      "default": null,
+      "name": "after",
+      "type": [
+        "null",
+        "Value"
+      ]
+    },
+    {
+      "name": "source",
+      "type": {
+        "connect.name": "io.debezium.connector.postgresql.Source",
+        "fields": [
+          {
+            "name": "version",
+            "type": "string"
+          },
+          {
+            "name": "connector",
+            "type": "string"
+          },
+          {
+            "name": "name",
+            "type": "string"
+          },
+          {
+            "name": "ts_ms",
+            "type": "long"
+          },
+          {
+            "default": "false",
+            "name": "snapshot",
+            "type": [
+              {
+                "connect.default": "false",
+                "connect.name": "io.debezium.data.Enum",
+                "connect.parameters": {
+                  "allowed": "true,last,false,incremental"
+                },
+                "connect.version": 1,
+                "type": "string"
+              },
+              "null"
+            ]
+          },
+          {
+            "name": "db",
+            "type": "string"
+          },
+          {
+            "default": null,
+            "name": "sequence",
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          {
+            "default": null,
+            "name": "ts_us",
+            "type": [
+              "null",
+              "long"
+            ]
+          },
+          {
+            "default": null,
+            "name": "ts_ns",
+            "type": [
+              "null",
+              "long"
+            ]
+          },
+          {
+            "name": "schema",
+            "type": "string"
+          },
+          {
+            "name": "table",
+            "type": "string"
+          },
+          {
+            "default": null,
+            "name": "txId",
+            "type": [
+              "null",
+              "long"
+            ]
+          },
+          {
+            "default": null,
+            "name": "lsn",
+            "type": [
+              "null",
+              "long"
+            ]
+          },
+          {
+            "default": null,
+            "name": "xmin",
+            "type": [
+              "null",
+              "long"
+            ]
+          }
+        ],
+        "name": "Source",
+        "namespace": "io.debezium.connector.postgresql",
+        "type": "record"
+      }
+    },
+    {
+      "default": null,
+      "name": "transaction",
+      "type": [
+        "null",
+        {
+          "connect.name": "event.block",
+          "connect.version": 1,
+          "fields": [
+            {
+              "name": "id",
+              "type": "string"
+            },
+            {
+              "name": "total_order",
+              "type": "long"
+            },
+            {
+              "name": "data_collection_order",
+              "type": "long"
+            }
+          ],
+          "name": "block",
+          "namespace": "event",
+          "type": "record"
+        }
+      ]
+    },
+    {
+      "name": "op",
+      "type": "string"
+    },
+    {
+      "default": null,
+      "name": "ts_ms",
+      "type": [
+        "null",
+        "long"
+      ]
+    },
+    {
+      "default": null,
+      "name": "ts_us",
+      "type": [
+        "null",
+        "long"
+      ]
+    },
+    {
+      "default": null,
+      "name": "ts_ns",
+      "type": [
+        "null",
+        "long"
+      ]
+    }
+  ],
+  "name": "Envelope",
+  "namespace": "mimic4demo.mimiciv_hosp.patients",
+  "type": "record"
+}

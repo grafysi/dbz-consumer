@@ -1,0 +1,46 @@
+{
+  "name": "mimic4demo-source1-avro-table-select-v3",
+  "config": {
+    "connector.class": "io.debezium.connector.postgresql.PostgresConnector",
+    "tasks.max": "1",
+    "plugin.name": "pgoutput",
+    "database.hostname": "192.168.100.1",
+    "database.port": "5433",
+    "database.user": "postgres",
+    "database.password": "abcd1234",
+    "database.dbname": "mimic4demo",
+    "schema.include.list": "mimiciv_hosp",
+    "table.include.list": "mimiciv_hosp.patients,mimiciv_hosp.services,mimiciv_hosp.admissions",
+    "topic.prefix": "dbz_mimic4demo",
+    "max.batch.size": "5",
+    "record.processing.threads": "1",
+    "key.converter": "io.apicurio.registry.utils.converter.AvroConverter",
+    "key.converter.apicurio.registry.url": "http://apicurio.hzp.local:8000/apis/registry/v2",
+    "key.converter.apicurio.registry.auto-register": true,
+    "key.converter.apicurio.registry.find-latest": true,
+    "key.converter.apicurio.registry.schema-resolver": "com.grafysi.horizpipes.utils.connect.apicurio.CustomSchemaResolver",
+    "key.converter.apicurio.registry.artifact-resolver-strategy": "com.grafysi.horizpipes.utils.connect.apicurio.CustomStrategy",
+
+    "value.converter": "io.apicurio.registry.utils.converter.AvroConverter",
+    "value.converter.apicurio.registry.url": "http://apicurio.hzp.local:8000/apis/registry/v2",
+    "value.converter.apicurio.registry.auto-register": true,
+    "value.converter.apicurio.registry.find-latest": true,
+    "value.converter.apicurio.registry.schema-resolver": "com.grafysi.horizpipes.utils.connect.apicurio.CustomSchemaResolver",
+    "value.converter.apicurio.registry.artifact-resolver-strategy": "com.grafysi.horizpipes.utils.connect.apicurio.CustomStrategy",
+
+    "notification.enabled.channels": "sink",
+    "notification.sink.topic.name": "dbz.notifications",
+
+    "schema.name.adjustment.mode": "avro",
+    "transforms": "ExtractTopic,Reroute",
+
+    "transforms.ExtractTopic.type": "com.grafysi.horizpipes.utils.connect.transforms.ExtractTopicName",
+    "transforms.ExtractTopic.topic.regex": "dbz_mimic4demo.mimiciv_hosp.(.*)",
+    "transforms.ExtractTopic.header.name": "__from_table",
+    "transforms.ExtractTopic.header.value.format": "__dbz_mimic4demo.mimiciv_hosp.$1",
+
+    "transforms.Reroute.type": "io.debezium.transforms.ByLogicalTableRouter",
+    "transforms.Reroute.topic.regex": ".*",
+    "transforms.Reroute.topic.replacement": "dbz.mimic4demo.hosp.table_select"
+  }
+}

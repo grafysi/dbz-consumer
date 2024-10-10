@@ -1,0 +1,1 @@
+docker run -d --name=redpanda-console --network=host -p 8080:8080 -e KAFKA_BROKERS=localhost:9092 docker.redpanda.com/redpandadata/console:latest

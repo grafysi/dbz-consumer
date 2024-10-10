@@ -1,0 +1,29 @@
+{
+  "name": "mimic4demo-json-schema-only-v1",
+  "config": {
+    "connector.class": "io.debezium.connector.postgresql.PostgresConnector",
+    "tasks.max": "1",
+    "plugin.name": "pgoutput",
+    "database.hostname": "192.168.100.1",
+    "database.port": "5433",
+    "database.user": "postgres",
+    "database.password": "abcd1234",
+    "database.dbname": "mimic4demo",
+    "schema.include.list": "mimiciv_hosp",
+    "topic.prefix": "mimic4demo.jschema",
+    "max.batch.size": "5",
+    "record.processing.threads": "1",
+    "key.converter": "org.apache.kafka.connect.json.JsonConverter",
+    "value.converter": "org.apache.kafka.connect.json.JsonConverter",
+    "key.converter.schemas.enable": "true",
+    "value.converter.schemas.enable": "true",
+    "notification.enabled.channels": "sink",
+    "notification.sink.topic.name": "dbz.notifications.schema.only",
+    "snapshot.mode": "configuration_based",
+    "snapshot.mode.configuration.based.snapshot.schema": "true",
+    "transforms": "Reroute",
+    "transforms.Reroute.type": "io.debezium.transforms.ByLogicalTableRouter",
+    "transforms.Reroute.topic.regex": "mimic4demo\\.jschema.*",
+    "transforms.Reroute.topic.replacement": "mimic4demo.json.hosp.all"
+  }
+}

@@ -1,8 +1,8 @@
-package com.grafysi.dbzconsumer.grpc;
+package com.grafysi.kbasedsinker.grpc;
 
-import com.grafysi.dbzconsumer.DbzConsumerGrpc;
-import com.grafysi.dbzconsumer.JsonRecord;
-import com.grafysi.dbzconsumer.SourceTopic;
+import com.grafysi.kbasedsinker.DbzConsumerGrpc;
+import com.grafysi.kbasedsinker.JsonRecord;
+import com.grafysi.kbasedsinker.SourceTopic;
 import io.grpc.stub.StreamObserver;
 import org.apache.avro.generic.GenericRecord;
 import org.apache.kafka.clients.consumer.KafkaConsumer;

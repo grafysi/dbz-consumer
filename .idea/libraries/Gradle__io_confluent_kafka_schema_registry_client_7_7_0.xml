@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Gradle: io.confluent:kafka-schema-registry-client:7.7.0" type="java-imported" external-system-id="GRADLE">
+    <properties groupId="io.confluent" artifactId="kafka-schema-registry-client" version="7.7.0" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.confluent/kafka-schema-registry-client/7.7.0/7219c5fd073e34ae2c68a752db359be9f20eafaa/kafka-schema-registry-client-7.7.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
